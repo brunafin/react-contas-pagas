@@ -14,7 +14,7 @@ function Welcome() {
   const [data, setData] = useState<IPaymentVoucher[]>([]);
 
   const getFiles = async () => {
-    await axios.get('http://localhost:3030/get-files')
+    await axios.get('https://python-contas-pagas.onrender.com/get-files')
       .then((response) => {
         setData(response.data);
       })
@@ -24,7 +24,7 @@ function Welcome() {
   }
 
   const updateFiles = async () => {
-    await axios.get('http://localhost:3030/upgrade-files')
+    await axios.get('https://python-contas-pagas.onrender.com/upgrade-files')
       .then((response) => {
         console.log(response)
         getFiles()
